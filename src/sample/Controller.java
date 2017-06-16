@@ -31,14 +31,11 @@ public class Controller {
         }
 
         String word = input.getText();
-
         List<String> words = engMap.get(word);
         if(words == null){
             words = ltMap.get(word);
         }
-
         printResult(words);
-
     }
 
     private void printResult(List<String> words){

@@ -2,13 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/null" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Pane prefHeight="342.0" prefWidth="483.0">
          <children>
@@ -17,10 +19,17 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button layoutX="219.0" layoutY="227.0" mnemonicParsing="false" onAction="#sayHi" text="Say hi" />
-            <TextField fx:id="input" layoutX="177.0" layoutY="165.0" promptText="Jusu vardas" />
-            <Label layoutX="93.0" layoutY="169.0" text="Jusu vardas" />
+            <Button layoutX="344.0" layoutY="80.0" mnemonicParsing="false" onAction="#translate" text="Versti" />
+            <TextField fx:id="input" layoutX="167.0" layoutY="80.0" promptText="Jusu zodis" />
+            <Label layoutX="85.0" layoutY="84.0" text="Zodis" />
+            <TextArea fx:id="output" layoutX="132.0" layoutY="128.0" prefHeight="200.0" prefWidth="200.0" promptText="Vertimas" />
          </children>
       </Pane>
    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

@@ -4,24 +4,53 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import read.ReadFile;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Controller {
 
     @FXML
-    private Label text;
-
-    @FXML
     private TextField input;
 
-    public void sayHi(ActionEvent event){
-        //String defaultValue = text.getText();
-        String defaultValue = input.getText();
-        if(defaultValue!=null && !defaultValue.equals("")) {
-            text.setText("Labas " + defaultValue);
-        }else {
+    @FXML
+    private TextArea output;
+
+    private Map<String, List<String>> engMap = new HashMap<>();
+    private Map<String, List<String>> ltMap = new HashMap<>();
+
+    public void translate(ActionEvent event){
+
+        if (engMap.isEmpty() || ltMap.isEmpty()){
+            ReadFile readFile = new ReadFile(engMap, ltMap);
+            readFile.read();
+        }
+
+        String word = input.getText();
+
+        List<String> words = engMap.get(word);
+        if(words == null){
+            words = ltMap.get(word);
+        }
+
+        printResult(words);
+
+    }
+
+    private void printResult(List<String> words){
+        if(words!= null && !words.isEmpty()){
+            StringBuilder sb = new StringBuilder();
+            for(String w : words){
+                sb.append(w).append("\n");
+            }
+            output.setText(sb.toString());
+        }else{
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText("Blogas vartotojo vardas");
+            alert.setContentText("Tokio zodzio juk nera!!!");
             alert.show();
         }
     }

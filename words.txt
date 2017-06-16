@@ -1,0 +1,12 @@
+cat-katinas
+dog-suo
+pc-kompiuteris
+mouse-pele
+keyboard-kliaviatura
+phone-telefonas
+cup-puodelis
+desk-stalas
+student-studentas
+cat-kate
+cup-puodukas
+cup-puodeliukas
